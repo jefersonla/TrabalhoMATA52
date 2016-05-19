@@ -2,9 +2,9 @@
 #include <conio.h>
 #define max 255 // Tamanho dos vetores deixa esse mesmo?
 
-int w[max],i,j,p[max];
-int n,m;
-float unit[max], fracRe[max];
+int i,j;
+int n;
+float unit[max], fracRe[max], w[max], p[max], m;
 int y[max],x[max],fp=-1,fw;
 
 void get()
@@ -12,12 +12,12 @@ void get()
     scanf("%d",&n);
 
     for(i=0; i<n; i++)
-        scanf("%d", &p[i]);
+        scanf("%f", &p[i]);
 
     for(i=0; i<n; i++)
-        scanf("%d",&w[i]);
+        scanf("%f",&w[i]);
 
-    scanf("%d",&m);
+    scanf("%f",&m);
 }
 
 void showBinary()
@@ -28,14 +28,14 @@ void showBinary()
     printf("Binária\n");
     printf("\n\tItem\tWeight\tCost\tUnit Profit\tSelected ");
     for(i=0; i<n; i++)
-        printf("\n\t%d\t%d\t%d\t%f\t%d",i+1,w[i],p[i],unit[i],x[i]);
+        printf("\n\t%d\t%f\t%f\t%f\t%d",i+1,w[i],p[i],unit[i],x[i]);
 
     printf("\n\n The Sack now holds following items : ");
     for(i=0; i<n; i++)
         if(x[i]==1)
         {
             printf("%d\t",i+1);
-            s += (float) p[i];
+            s += p[i];
         }
 
     printf("\n Maximum Profit: %f ",s);
@@ -58,7 +58,7 @@ void sort()
     int t,t1;
     float t2;
     for(i=0; i<n; i++)
-        unit[i] = (float) p[i] / (float) w[i];
+        unit[i] = p[i] / w[i];
     for(i=0; i<n-1; i++)
     {
         for(j=i+1; j<n; j++)
@@ -89,7 +89,7 @@ float bound(float cp,float cw,int k)
         if( c < m)
             b = b +p[i];
         else
-            return (b+(1-(c-m)/ (float)w[i])*p[i]);
+            return (b+(1-(c-m)/ w[i])*p[i]);
     }
     return b;
 }
