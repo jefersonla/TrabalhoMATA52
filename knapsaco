@@ -26,9 +26,9 @@ void showBinary()
 
     float s=0;
     printf("Binary\n");
-    printf("\n\tItem\tWeight\tProfit\tUnit\tSelected ");
+    printf("\n\tItem\tWeight\tProfit\tSelected ");
     for(i=0; i<n; i++)
-        printf("\n\t%d\t%.1f\t%.1f\t%.1f\t%d",i+1,w[i],p[i],unit[i],x[i]);
+        printf("\n\t%d\t%.1f\t%.1f\t%.1f\t%d",i+1,w[i],p[i],x[i]);
 
     printf("\n\nThe Sack now holds following items : ");
     for(i=0; i<n; i++)
@@ -42,7 +42,7 @@ void showBinary()
 
     s = 0;
     printf("\n\nFracional\n");
-    printf("\n\tItem\tWeight\tProfit\tUnit");
+    printf("\n\tItem\tWeight\tProfit\tSelected");
     for(i=0; i<n; i++){
         printf("\n\t%d\t%.1f\t%.1f\t%.1f\t",i+1,w[i],p[i],fracRe[i]);
         s += fracRe[i]*p[i];
