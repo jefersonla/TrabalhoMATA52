@@ -55,7 +55,7 @@ void showBinary()
 //Arrange the item based on high profit per Unit
 void sort()
 {
-    float t2, t, t2;
+    float t2, t, t1;
     for(i=0; i<n; i++)
         unit[i] = p[i] / w[i];
     for(i=0; i<n-1; i++)
