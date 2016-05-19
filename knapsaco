@@ -4,7 +4,7 @@
 
 int w[max],i,j,p[max];
 int n,m;
-float unit[max];
+float unit[max], fracRe[max];
 int y[max],x[max],fp=-1,fw;
 
 void get()
@@ -24,19 +24,32 @@ void showBinary()
 {
 
 
-    float s=0.0;
+    float s=0;
+    printf("Binária\n");
     printf("\n\tItem\tWeight\tCost\tUnit Profit\tSelected ");
     for(i=0; i<n; i++)
         printf("\n\t%d\t%d\t%d\t%f\t%d",i+1,w[i],p[i],unit[i],x[i]);
+
     printf("\n\n The Sack now holds following items : ");
     for(i=0; i<n; i++)
         if(x[i]==1)
         {
             printf("%d\t",i+1);
-            s += (float) p[i] * (float) x[i];
+            s += (float) p[i];
         }
 
     printf("\n Maximum Profit: %f ",s);
+
+    s = 0;
+    printf("Fracionada\n");
+    printf("\n\tItem\tWeight\tCost\tUnit Profit\t");
+    for(i=0; i<n; i++){
+        printf("\n\t%d\t%d\t%d\t%f\t%d",i+1,w[i],p[i],fracRe[i]);
+        s += fracRe[i]*p[i];
+    }
+
+    printf("\n Maximum Profit: %f ",s);
+
 }
 
 //Arrange the item based on high profit per Unit
@@ -111,12 +124,37 @@ void knapsack(int k,float cp,float cw)
     }
 }
 
+void Rknapsack(){
+    int k = 0;
+    int cp = 0;
+    int cw = 0;
+
+    for(int j = 0; j<n; j++){
+        fracRe[j] = 0;
+    }
+
+    while((cw < m)&&(k < n)){
+        if(cw + w[k] <= m){
+            fracRe[k] = 1;
+            cw += w[k];
+            cp += p[k];
+            k++;
+        }
+        else{
+            fracRe[k] = (m - cw)/w[k];
+            cw = m;
+            cp += fracRe[k]*p[k];
+            i++;
+        }
+    }
+}
+
 int main()
 {
     get();
-    printf("\n The Sack is arranged in the order\n");
     sort();
     knapsack(0,0.0,0.0);
+    Rknapsack();
     showBinary();
     getch();
 }
