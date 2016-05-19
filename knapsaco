@@ -124,26 +124,24 @@ void knapsack(int k,float cp,float cw)
 }
 
 void Rknapsack(){
-    int k = 0;
-    int cp = 0;
-    int cw = 0;
-    int j;
+    int k, j = 0;
+    float cpp, cww = 0;
 
     for(j = 0; j<n; j++){
         fracRe[j] = 0;
     }
 
-    while((cw < m)&&(k < n)){
-        if(cw + w[k] <= m){
+    while((cww < m)&&(k < n)){
+        if(cww + w[k] <= m){
             fracRe[k] = 1;
-            cw += w[k];
-            cp += p[k];
+            cww += w[k];
+            cpp += p[k];
             k++;
         }
         else{
-            fracRe[k] = (m - cw)/w[k];
-            cw = m;
-            cp += fracRe[k]*p[k];
+            fracRe[k] = (m - cww)/w[k];
+            cww = m;
+            cpp += fracRe[k]*p[k];
             i++;
         }
     }
