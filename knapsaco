@@ -4,8 +4,8 @@
 
 int i,j;
 int n;
-float unit[max], fracRe[max], w[max], p[max], m;
-int y[max],x[max],fp=-1,fw;
+float unit[max], fracRe[max], w[max], p[max], m, y[max],x[max],fp=-1,fw;
+//int y[max],x[max],fp=-1,fw;
 
 void get()
 {
@@ -28,7 +28,7 @@ void show()
     printf("Binary\n");
     printf("\n\tItem\tWeight\tProfit\tSelected ");
     for(i=0; i<n; i++)
-        printf("\n\t%d\t%.1f\t%.1f\t%.1f\t%d",i+1,w[i],p[i],x[i]);
+        printf("\n\t%d\t%.1f\t%.1f\t%d",i+1,w[i],p[i],x[i]);
 
     printf("\n\nThe Sack now holds following items : ");
     for(i=0; i<n; i++)
