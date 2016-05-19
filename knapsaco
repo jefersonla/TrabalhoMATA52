@@ -28,7 +28,7 @@ void showBinary()
     printf("Binária\n");
     printf("\n\tItem\tWeight\tCost\tUnit Profit\tSelected ");
     for(i=0; i<n; i++)
-        printf("\n\t%d\t%f\t%f\t%f\t%d",i+1,w[i],p[i],unit[i],x[i]);
+        printf("\n\t%d\t%.2f\t%.2f\t%.2f\t%d",i+1,w[i],p[i],unit[i],x[i]);
 
     printf("\n\n The Sack now holds following items : ");
     for(i=0; i<n; i++)
@@ -44,11 +44,11 @@ void showBinary()
     printf("Fracionada\n");
     printf("\n\tItem\tWeight\tCost\tUnit Profit\t");
     for(i=0; i<n; i++){
-        printf("\n\t%d\t%d\t%d\t%f\t%d",i+1,w[i],p[i],fracRe[i]);
+        printf("\n\t%d\t%.2f\t%.2f\t%.2f\t",i+1,w[i],p[i],fracRe[i]);
         s += fracRe[i]*p[i];
     }
 
-    printf("\n Maximum Profit: %f ",s);
+    printf("\n Maximum Profit: %.2f ",s);
 
 }
 
