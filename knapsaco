@@ -42,7 +42,7 @@ void show()
 
     s = 0;
     printf("\n\nFractional\n");
-    printf("\n\tItem\tWeight\tProfit\Selected");
+    printf("\n\tItem\tWeight\tProfit\tSelected");
     for(i=0; i<n; i++){
         printf("\n\t%d\t%.1f\t%.1f\t%.1f\t",i+1,w[i],p[i],fracRe[i]);
         s += fracRe[i]*p[i];
