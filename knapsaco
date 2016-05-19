@@ -20,7 +20,7 @@ void get()
     scanf("%f",&m);
 }
 
-void showBinary()
+void show()
 {
 
 
@@ -155,6 +155,6 @@ int main()
     sort();
     knapsack(0,0.0,0.0);
     Rknapsack();
-    showBinary();
+    show();
     getch();
 }
