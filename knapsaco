@@ -125,8 +125,8 @@ void knapsack(int k,float cp,float cw)
 
 void Rknapsack(){
     int k = 0;
-    int cp = 0;
-    int cw = 0;
+    float cp = 0;
+    float cw = 0;
     int j;
 
     for(j = 0; j<n; j++){
@@ -156,5 +156,5 @@ int main()
     knapsack(0,0.0,0.0);
     Rknapsack();
     show();
-    getch();
+    system ("pause");
 }
