@@ -25,10 +25,10 @@ void showBinary()
 
 
     float s=0;
-    printf("Binária\n");
-    printf("\n\tItem\tWeight\tCost\tUnit Profit\tSelected ");
+    printf("Binaria\n");
+    printf("\n\tItem\tWeight\tProfit\tUnit\tSelected ");
     for(i=0; i<n; i++)
-        printf("\n\t%d\t%.2f\t%.2f\t%.2f\t%d",i+1,w[i],p[i],unit[i],x[i]);
+        printf("\n\t%d\t%.1f\t%.1f\t%.1f\t%d",i+1,w[i],p[i],unit[i],x[i]);
 
     printf("\n\n The Sack now holds following items : ");
     for(i=0; i<n; i++)
@@ -41,22 +41,21 @@ void showBinary()
     printf("\n Maximum Profit: %f ",s);
 
     s = 0;
-    printf("Fracionada\n");
-    printf("\n\tItem\tWeight\tCost\tUnit Profit\t");
+    printf("\nFracionada\n");
+    printf("\n\tItem\tWeight\Profit\tUnit");
     for(i=0; i<n; i++){
-        printf("\n\t%d\t%.2f\t%.2f\t%.2f\t",i+1,w[i],p[i],fracRe[i]);
+        printf("\n\t%d\t%.1f\t%.1f\t%.1f\t",i+1,w[i],p[i],fracRe[i]);
         s += fracRe[i]*p[i];
     }
 
-    printf("\n Maximum Profit: %.2f ",s);
+    printf("\n Maximum Profit: %.1f ",s);
 
 }
 
 //Arrange the item based on high profit per Unit
 void sort()
 {
-    int t,t1;
-    float t2;
+    float t2, t, t2;
     for(i=0; i<n; i++)
         unit[i] = p[i] / w[i];
     for(i=0; i<n-1; i++)
